@@ -1,0 +1,48 @@
+.ecosystem-wrapper {
+  background-color: #0c1424; /* Azul marinho escuro de fundo */
+  color: #c4d1ec;            /* Texto claro acinzentado/azul */
+  font-family: 'Courier New', Courier, monospace;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.ecosystem-header {
+  border-bottom: 1px solid #1a2f54;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+}
+
+.pulse-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #0077ff; /* Led azul indicando túnel ativo */
+  border-radius: 50%;
+  margin-right: 10px;
+  box-shadow: 0 0 10px #0077ff;
+}
+
+.terminal-logs {
+  background-color: #060b14;
+  border-left: 3px solid #0052cc;
+  padding: 15px;
+  color: #6495ed;
+  margin-top: 15px;
+}
+
+.btn-download {
+  display: inline-block;
+  background: linear-gradient(135deg, #0052cc 0%, #002b80 100%);
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  border: 1px solid #0077ff;
+  transition: transform 0.2s;
+}
+
+.btn-download:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(0, 119, 255, 0.6);
+}
