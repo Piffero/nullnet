@@ -1,0 +1,141 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.terminal-container {
+  width: 100%;
+  padding: 20px 0;
+  font-family: "JetBrains Mono", "Fira Code", Monaco, monospace;
+}
+
+/* Janela Principal do Console */
+.terminal-window {
+  width: 100%;
+  background-color: rgba(14, 22, 18, 0.85); /* Fundo dark translúcido */
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+/* Cabeçalho superior */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  background-color: rgba(10, 15, 12, 0.9);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.1);
+  position: relative;
+}
+
+/* Botões do canto esquerdo */
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 18px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-close { background-color: #ef4444; opacity: 0.85; }
+.dot-minimize { background-color: #f59e0b; opacity: 0.85; }
+.dot-expand { background-color: #10b981; opacity: 0.85; }
+
+/* Botões do canto direito */
+.terminal-reload {
+  background: rgba(3, 45, 18, 0.3);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #22c55e;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Título centralizado */
+.terminal-title {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.45);
+  letter-spacing: 0.08em;
+}
+
+/* Área de Linhas do Console */
+.terminal-body {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  line-height: 1.6;
+}
+
+/* Estilização dos Prompts e Textos */
+.command-line {
+  display: flex;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.prompt {
+  color: #22c55e;
+  font-weight: bold;
+  user-select: none;
+}
+
+.command {
+  color: #ecfdf5;
+}
+
+.log-line {
+  font-size: 14px;
+  color: rgba(34, 197, 94, 0.8);
+  padding-left: 20px; /* Alinhamento sutil para recuo de log */
+}
+
+/* Modificadores Estáticos Nativos */
+.muted {
+  color: rgba(34, 197, 94, 0.4) !important;
+}
+
+.opacity-70 {
+  color: rgba(34, 197, 94, 0.6);
+}
+
+.success {
+  color: #22c55e !important;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.65);
+}
+
+/* Ajuste Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: 20px;
+    gap: 8px;
+  }
+  .command-line, .log-line {
+    font-size: 12px;
+  }
+  .terminal-header {
+    justify-content: flex-end;
+  }
+  .terminal-title {
+    text-align: right;
+    padding-right: 4px;
+  }
+}

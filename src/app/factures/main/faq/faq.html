@@ -1,0 +1,79 @@
+<section class="faq-container">
+  
+  <div class="faq-header">
+    <div class="header-left">
+      <span class="section-tag">section_06</span>
+      <h2 class="section-title">
+        <span class="title-arrow">&gt;</span> FAQ // PERGUNTAS QUE OUVIMOS DEMAIS
+      </h2>
+    </div>
+    <div class="header-right">
+      <span class="scroll-counter">[ scroll: 06/06 ]</span>
+    </div>
+  </div>
+
+  <div class="faq-accordion">
+    
+    <div class="faq-item" [class.active]="activeIndices[0]">
+      <div class="faq-trigger" (click)="toggleItem(0)">
+        <h3 class="faq-question">? ISSO É LEGAL?</h3>
+        <span class="faq-icon">{{ activeIndices[0] ? '×' : '+' }}</span>
+      </div>
+      <div class="faq-content">
+        <p class="faq-answer">
+          A plataforma é uma infraestrutura neutra. O que você faz nela é problema seu. Não fornecemos aconselhamento jurídico — fornecemos criptografia.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" [class.active]="activeIndices[1]">
+      <div class="faq-trigger" (click)="toggleItem(1)">
+        <h3 class="faq-question">? ACEITAM BITCOIN?</h3>
+        <span class="faq-icon">{{ activeIndices[1] ? '×' : '+' }}</span>
+      </div>
+      <div class="faq-content">
+        <p class="faq-answer">
+          Não. BTC tem ledger público e ferramentas de análise maduras. Monero é o único caminho.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" [class.active]="activeIndices[2]">
+      <div class="faq-trigger" (click)="toggleItem(2)">
+        <h3 class="faq-question">? ONDE FICAM OS SERVIDORES?</h3>
+        <span class="faq-icon">{{ activeIndices[2] ? '×' : '+' }}</span>
+      </div>
+      <div class="faq-content">
+        <p class="faq-answer">
+          Distribuídos. Hidden service v3 garante que nem nós sabemos a localização do guard relay do cliente.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" [class.active]="activeIndices[3]">
+      <div class="faq-trigger" (click)="toggleItem(3)">
+        <h3 class="faq-question">? E SE FOREM HACKEADOS?</h3>
+        <span class="faq-icon">{{ activeIndices[3] ? '×' : '+' }}</span>
+      </div>
+      <div class="faq-content">
+        <p class="faq-answer">
+          Não há nada para vazar. Mensagens são E2E, fundos são multisig não-custodiais, identidades são hashes. Pwn the box, get nothing.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item" [class.active]="activeIndices[4]">
+      <div class="faq-trigger" (click)="toggleItem(4)">
+        <h3 class="faq-question">? POSSO CONFIAR EM VOCÊS?</h3>
+        <span class="faq-icon">{{ activeIndices[4] ? '×' : '+' }}</span>
+      </div>
+      <div class="faq-content">
+        <p class="faq-answer">
+          Não. Confie na matemática. Auditorias do client open-source em github.io/nullnet-audit (acesso via Tor).
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>

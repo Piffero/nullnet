@@ -1,0 +1,170 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.security-container {
+  width: 100%;
+  padding: 40px 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ==========================================================================
+   CABEÇALHO DA SEÇÃO
+   ========================================================================== */
+.security-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.section-tag {
+  display: block;
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ecfdf5;
+  letter-spacing: -0.01em;
+}
+
+.title-arrow {
+  color: #22c55e;
+  margin-right: 4px;
+}
+
+.scroll-counter {
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+}
+
+/* ==========================================================================
+   MALLHA DE PAINÉIS (GRID DE DUAS COLUNAS)
+   ========================================================================== */
+.security-panels-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  background-color: rgba(14, 22, 18, 0.5);
+}
+
+.security-panel-left {
+  padding: 40px;
+  border-right: 1px solid rgba(34, 197, 94, 0.12);
+}
+
+.security-panel-right {
+  padding: 40px;
+}
+
+/* Subtítulos dos Painéis Internos */
+.panel-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alert-triangle {
+  font-size: 10px;
+}
+
+.guarantee-diamond {
+  font-size: 12px;
+}
+
+/* Lista Operacional da Esquerda */
+.opsec-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.opsec-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.list-num {
+  font-size: 13px;
+  color: #22c55e;
+  font-weight: 600;
+  user-select: none;
+}
+
+.list-text {
+  font-size: 13px;
+  color: rgba(236, 253, 245, 0.6);
+  line-height: 1.5;
+}
+
+/* Tabela de Chave-Valor da Direita */
+.guarantee-table {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.guarantee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.g-key {
+  font-size: 13px;
+  color: rgba(236, 253, 245, 0.5);
+}
+
+.g-val {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-align: right;
+}
+
+/* Cores e Brilhos Modificadores */
+.text-orange {
+  color: #f97316;
+}
+
+.text-green {
+  color: #22c55e;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.text-glow-green {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+/* Responsividade Adaptativa Terminal */
+@media (max-width: 992px) {
+  .security-panels-grid {
+    grid-template-columns: 1fr;
+  }
+  .security-panel-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.12);
+  }
+  .security-panel-left, .security-panel-right {
+    padding: 32px 24px;
+  }
+}

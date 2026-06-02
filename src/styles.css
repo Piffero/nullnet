@@ -1,1 +1,261 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   1. VARIÁVEIS DO TEMA (CYBERPUNK / .ONION)
+   ========================================================================== */
+:root {
+  --color-background: #131a17;
+  --color-foreground: #ecfdf5;
+  --color-card: rgba(22, 32, 27, 0.6);
+  --color-primary: #22c55e;
+  --color-muted: #1e2923;
+  --color-muted-foreground: #6b7280;
+  --color-border: rgba(34, 197, 94, 0.2);
+  --color-warning: #eab308;
+  --color-destructive: #ef4444;
+  --color-accent: #3b82f6;
+
+  /* Efeitos de Glow */
+  --glow-primary: 0 0 20px rgba(34, 197, 94, 0.5), 0 0 40px rgba(34, 197, 94, 0.25);
+  --glow-soft: 0 0 12px rgba(34, 197, 94, 0.35);
+
+  /* Malhas de Fundo */
+  --gradient-grid: linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+                   linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+  --gradient-radial: radial-gradient(ellipse at top, rgba(34, 197, 94, 0.15) 0%, transparent 60%);
+  --scanline: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.25) 2px,
+    rgba(0, 0, 0, 0.25) 3px
+  );
+}
+
+/* ==========================================================================
+   2. RESET DE SCOPO GLOBAL E ESTRUTURA BASE
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "JetBrains Mono", "Fira Code", Monaco, monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font-family: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(34, 197, 94, 0.3);
+  color: var(--color-primary);
+}
+
+/* Layout Estrutural Principal */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main-content {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   3. CAMADAS DE TEXTURA E PROJEÇÃO (FUNDO CYBERPUNK)
+   ========================================================================== */
+.pointer-events-none { pointer-events: none; }
+.fixed-inset { position: fixed; inset: 0; }
+
+.bg-grid {
+  background-image: var(--gradient-grid);
+  background-size: 40px 40px;
+}
+
+.bg-radial-top {
+  background-image: var(--gradient-radial);
+}
+
+.bg-scanline {
+  background-image: var(--scanline);
+}
+
+/* ==========================================================================
+   4. EFEITOS DE TEXTO E BRILHO VINTAGE TERMINAL
+   ========================================================================== */
+.text-glow {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.7), 0 0 24px rgba(34, 197, 94, 0.35);
+}
+
+.text-glow-soft {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+}
+
+.box-glow {
+  box-shadow: var(--glow-primary);
+}
+
+.box-glow-soft {
+  box-shadow: var(--glow-soft);
+}
+
+/* Animações e Classes de Efeito */
+.blink::after {
+  content: "_";
+  animation: blink-anim 1s steps(2, start) infinite;
+}
+@keyframes blink-anim { to { visibility: hidden; } }
+
+.flicker {
+  animation: flicker-anim 4s infinite;
+}
+@keyframes flicker-anim {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.6; }
+}
+
+/* ==========================================================================
+   5. COMPONENTE INTERNO: MARQUEE (ESTEIRA DO MARKETPLACE)
+   ========================================================================== */
+.marquee-wrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(22, 32, 27, 0.3);
+  padding: 16px 0;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+
+.marquee-container {
+  display: flex;
+  width: max-content;
+}
+
+.marquee-list {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+  animation: marquee-anim 35s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes marquee-anim {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.market-card {
+  width: 320px;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+.market-card:hover {
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+/* ==========================================================================
+   6. GRID LAYOUTS REUTILIZÁVEIS SIMPLIFICADOS
+   ========================================================================== */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+
+.grid-2 {
+  display: grid;
+  grid-template-cols: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-2 { grid-template-cols: repeat(2, 1fr); }
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-cols: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .grid-4 { grid-template-cols: repeat(4, 1fr); }
+}
+
+/* ==========================================================================
+   7. UTILS DE CORES E TEXTOS ESPECÍFICOS
+   ========================================================================== */
+.text-primary { color: var(--color-primary); }
+.text-muted { color: var(--color-muted-foreground); }
+.text-warning { color: var(--color-warning); }
+.text-destructive { color: var(--color-destructive); }
+
+.text-xs { font-size: 11px; }
+.text-sm { font-size: 14px; }
+.text-lg { font-size: 18px; }
+.text-xl { font-size: 24px; }
+.text-bold { font-weight: bold; }
+.uppercase { text-transform: uppercase; }
+.tracking-widest { letter-spacing: 0.15em; }
+
+/* ==========================================================================
+   8. COMPONENTES ESPECÍFICOS: TERMINAL & ACORDION FAQ
+   ========================================================================== */
+.terminal-window {
+  border: 1px solid var(--color-border);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.terminal-header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: rgba(22, 32, 27, 0.5);
+  padding: 8px 16px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.faq-button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-content {
+  border-top: 1px solid rgba(34, 197, 94, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.hidden { display: none !important; }

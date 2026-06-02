@@ -1,0 +1,28 @@
+<nav class="nav-container">
+  
+  <div class="nav-brand">
+    <svg class="nav-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    <span class="brand-name text-glow-green">NULLNET</span>
+    <span class="brand-version">/v0.9.3-rc</span>
+  </div>
+
+  <div class="nav-links">
+   @for (link of links; track link.path) {
+        <a 
+          [href]="link.path" 
+          class="text-muted-foreground hover:text-primary transition-colors"
+        >
+          {{ link.label }}
+        </a>
+      }
+  </div>
+
+  <div class="nav-actions">
+    <a href="#access" class="btn-invite box-glow-green">
+      [ request invite ]
+    </a>
+  </div>
+
+</nav>

@@ -1,0 +1,26 @@
+<section id="features" class="features-container">
+  
+  <div class="features-header">
+    <div class="header-left">
+      <span class="section-tag">section_02</span>
+      <h2 class="section-title">
+        <span class="title-arrow">&gt;</span> RECURSOS // O QUE ESTÁ SOB O CAPÔ
+      </h2>
+    </div>
+    <div class="header-right">
+      <span class="scroll-counter">[ scroll: 02/06 ]</span>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    @for (item of features; track $index) {
+      <div class="feature-box">
+        <span class="feature-id">[{{ item.id }}]</span>
+        <h3 class="feature-name text-glow-green">{{ item.title }}</h3>
+        <p class="feature-desc">{{ item.description }}</p>
+        <span class="feature-status text-glow-green">● active</span>
+      </div>
+    }
+  </div>
+
+</section>

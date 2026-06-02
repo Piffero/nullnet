@@ -1,0 +1,152 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Container Principal do Hero */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha todo o conteúdo à esquerda conforme o print */
+  padding: 60px 0 20px 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* Tag de Status de Rede */
+.network-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(22, 32, 27, 0.4);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  padding: 6px 12px;
+  margin-bottom: 32px;
+}
+
+.badge-dot-orange {
+  width: 6px;
+  height: 6px;
+  background-color: #f97316; /* Laranja de aviso */
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f97316;
+  animation: badge-blink 2s infinite ease-in-out;
+}
+
+.badge-text {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #6b7280;
+  letter-spacing: 0.1em;
+}
+
+/* Título Principal Massivo */
+.hero-title {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: #ecfdf5;
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+}
+
+/* Parágrafo de Manifesto */
+.hero-manifesto {
+  font-size: 14px;
+  color: rgba(34, 197, 94, 0.65); /* Verde fosco de fósforo antigo */
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+/* Grupo de Botões */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+/* Botão Conectar Principal */
+.btn-connect {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  color: #22c55e;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 14px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-connect:hover {
+  background-color: rgb(28, 209, 94);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0);
+  color: #191b1a;
+}
+
+/* Botão Ler Manifesto Secundário */
+.btn-manifest {
+  background-color: transparent;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  color: #4b5563; /* Cinza apagado */
+  font-size: 12px;
+  padding: 14px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-manifest:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #ecfdf5;
+}
+
+/* Barra Terminal de Endereço Onion Inferior */
+.onion-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(34, 197, 94, 0.08);
+  padding: 12px 16px;
+}
+
+.terminal-prompt {
+  color: #22c55e;
+  font-weight: bold;
+  user-select: none;
+}
+
+.terminal-address {
+  color: rgba(34, 197, 94, 0.8);
+  font-size: 11px;
+  word-break: break-all;
+}
+
+/* Animações e Efeitos Brutos */
+.text-glow-heavy {
+  text-shadow: 
+    0 0 12px rgba(34, 197, 94, 0.8),
+    0 0 24px rgba(34, 197, 94, 0.4),
+    0 0 40px rgba(147, 197, 253, 0.2); /* Tom azul de aberração cromática sutil */
+}
+
+.box-glow-green {
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.25);
+}
+
+@keyframes badge-blink {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px #f97316); }
+  50% { opacity: 0.4; filter: drop-shadow(0 0 2px #f97316); }
+}

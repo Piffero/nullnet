@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.matrix-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none; /* Garante que o usuário consiga clicar nos botões normalmente */
+  opacity: 0.08;         /* Opacidade calibrada idêntica ao print alvo */
+}

@@ -1,0 +1,89 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Alinhamento geral e margens da barra */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background-color: transparent;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* Lado Esquerdo: Logo + Versão */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-logo-icon {
+  width: 16px;
+  height: 16px;
+  color: #22c55e;
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.6));
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #22c55e;
+}
+
+.brand-version {
+  font-size: 12px;
+  color: #4b5563; /* Tom cinza opaco */
+}
+
+/* Centro: Links de Navegação */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-item {
+  font-size: 12px;
+  color: #4b5563;
+  transition: color 0.15s ease, text-shadow 0.15s ease;
+}
+
+.nav-item:hover {
+  color: #22c55e;
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.4);
+}
+
+/* Lado Direito: Botão de Convite */
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.btn-invite {
+  display: inline-block;
+  font-size: 12px;
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.6);
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: rgba(22, 32, 27, 0.2);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-invite:hover {
+  background-color: rgba(34, 197, 94, 0.1);
+  box-shadow: 0 0 14px rgba(34, 197, 94, 0.4), inset 0 0 6px rgba(34, 197, 94, 0.2);
+}
+
+/* Efeitos de Projeção CRT / Terminal */
+.text-glow-green {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.7);
+}
+
+.box-glow-green {
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.15);
+}

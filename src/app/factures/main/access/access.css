@@ -1,0 +1,252 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.access-container {
+  width: 100%;
+  padding: 40px 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+.access-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.section-tag {
+  display: block;
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ecfdf5;
+}
+
+.title-arrow {
+  color: #22c55e;
+}
+
+.scroll-counter {
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+}
+
+/* ==========================================================================
+   CARD CENTRAL DE INPUT
+   ========================================================================== */
+.access-main-card {
+  width: 100%;
+  background-color: rgba(14, 22, 18, 0.5);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  padding: 60px 40px;
+  margin-bottom: 24px;
+}
+
+.access-description {
+  font-size: 15px;
+  color: rgba(236, 253, 245, 0.7);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 48px;
+}
+
+.invite-input-group {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-label {
+  font-size: 11px;
+  color: #22c55e;
+  letter-spacing: 0.1em;
+}
+
+.invite-field {
+  background-color: transparent;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  color: #ecfdf5;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.invite-field:focus {
+  border-color: #22c55e;
+}
+
+.btn-verify {
+  background-color: #22c55e;
+  color: #131a17;
+  border: none;
+  padding: 18px 32px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-verify:hover {
+  background-color: #4ade80;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+/* ==========================================================================
+   GRID DE PASSOS (RODAPÉ DA SEÇÃO)
+   ========================================================================== */
+.access-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-left: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.step-box {
+  padding: 32px;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-left: none; /* Evita borda dupla */
+  background-color: rgba(14, 22, 18, 0.3);
+}
+
+.step-id {
+  font-size: 11px;
+  color: #22c55e;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.step-title {
+  font-size: 14px;
+  color: #ecfdf5;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.step-desc {
+  font-size: 12px;
+  color: rgba(236, 253, 245, 0.5);
+  line-height: 1.4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .invite-input-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .access-steps-grid {
+    grid-template-columns: 1fr;
+    border-left: 1px solid rgba(34, 197, 94, 0.15);
+  }
+}
+
+
+/* Adicione estas regras no final do seu arquivo access.css original */
+.totp-auth-layout {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.qrcode-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #131a17;
+  padding: 16px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.qrcode-wrapper canvas {
+  border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+.qrcode-caption {
+  font-size: 10px;
+  color: rgba(34, 197, 94, 0.6);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.center-text {
+  text-align: center;
+  letter-spacing: 6px;
+  font-size: 18px !important;
+}
+
+.green-text {
+  color: #4ade80 !important;
+}
+
+.error-banner {
+  margin-top: 16px;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #f87171;
+  font-size: 12px;
+}
+
+.terminal-feedback {
+  padding: 32px;
+  border: 1px solid;
+  margin: 20px 0;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.success-box {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: #22c55e;
+  color: #4ade80;
+}
+
+.error-box {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.retry-btn {
+  margin-top: 20px;
+  background-color: #ef4444 !important;
+  color: #fff !important;
+}
+
+.active-step {
+  border-bottom: 2px solid #22c55e !important;
+  background: rgba(34, 197, 94, 0.02);
+}
+
+.blink-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}

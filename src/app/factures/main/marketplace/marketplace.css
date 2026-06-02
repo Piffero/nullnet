@@ -1,0 +1,167 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.market-container {
+  width: 100%;
+  padding: 40px 0;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* ==========================================================================
+   CABEÇALHO DA SEÇÃO
+   ========================================================================== */
+.market-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.section-tag {
+  display: block;
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ecfdf5;
+  letter-spacing: -0.01em;
+}
+
+.title-arrow {
+  color: #22c55e;
+  margin-right: 4px;
+}
+
+.scroll-counter {
+  font-size: 11px;
+  color: rgba(34, 197, 94, 0.4);
+}
+
+/* ==========================================================================
+   MALHA / GRID DO MERCADO
+   ========================================================================== */
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  background-color: rgba(14, 22, 18, 0.5);
+}
+
+/* Caixa de Categoria Unicâmera */
+.market-box {
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.market-box:hover {
+  background-color: rgba(34, 197, 94, 0.03);
+}
+
+/* Controladores de Divisória da Grade (Bordas Perfeitas) */
+.market-box:nth-child(odd) {
+  border-right: 1px solid rgba(34, 197, 94, 0.12);
+}
+
+.market-box:nth-child(1),
+.market-box:nth-child(2),
+.market-box:nth-child(3),
+.market-box:nth-child(4) {
+  border-bottom: 1px solid rgba(34, 197, 94, 0.12);
+}
+
+/* Agrupamento do Ícone + Textos à Esquerda */
+.box-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Caixa e Estilo dos SVGs */
+.market-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #22c55e;
+}
+
+.market-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Textos Informativos */
+.market-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.category-meta {
+  font-size: 12px;
+  color: rgba(236, 253, 245, 0.4);
+}
+
+.divider {
+  color: rgba(34, 197, 94, 0.3);
+  margin: 0 4px;
+}
+
+/* Seta Indicadora na Direita Extrema */
+.arrow-indicator {
+  color: rgba(34, 197, 94, 0.25);
+  font-size: 14px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.market-box:hover .arrow-indicator {
+  color: #22c55e;
+  transform: translateX(4px);
+}
+
+/* Efeito Glow de Fósforo CRT */
+.text-glow-green {
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.65));
+}
+
+/* Adaptação Fina para Mobile */
+@media (max-width: 768px) {
+  .market-grid {
+    grid-template-columns: 1fr;
+  }
+  .market-box {
+    padding: 24px;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.12) !important;
+  }
+  .market-box:last-child {
+    border-bottom: none !important;
+  }
+  .market-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

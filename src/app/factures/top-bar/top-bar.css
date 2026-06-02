@@ -1,0 +1,78 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Container principal da barra */
+.top-bar-network {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent; /* Deixa o fundo dark global reinar por trás */
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.1); /* Linha divisória sutil */
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+/* Alinhamento do indicador com os textos da esquerda */
+.top-bar-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* O ponto verde brilhante */
+.status-indicator-green {
+  width: 7px;
+  height: 7px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+}
+
+/* Bloco central da rota */
+.top-bar-route {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Setas e pontos separadores cinzas */
+.route-arrow {
+  color: #4b5563;
+  padding: 0 2px;
+}
+
+.route-divider {
+  color: #4b5563;
+  padding: 0 4px;
+  font-weight: bold;
+}
+
+/* Modificadores estáticos rápidos caso queira reaproveitar */
+.text-muted {
+  color: #6b7280;
+}
+
+.text-success {
+  color: #22c55e;
+}
+
+.text-foreground {
+  color: #ecfdf5;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-glow-soft {
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.5);
+}

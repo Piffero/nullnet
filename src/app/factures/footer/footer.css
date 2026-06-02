@@ -1,0 +1,147 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 60px 0 40px 0;
+  border-top: 1px solid rgba(34, 197, 94, 0.12);
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  background-color: rgba(10, 15, 12, 0.3);
+}
+
+/* Grid Principal de 3 Colunas Assimétricas */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.3fr 1.5fr;
+  gap: 48px;
+  width: 100%;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+/* Títulos das Colunas Secundárias */
+.column-title {
+  font-size: 11px;
+  color: rgba(236, 253, 245, 0.4);
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   COLUNA DA ESQUERDA - MARCA
+   ========================================================================== */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.logo-icon {
+  color: #22c55e;
+  font-size: 16px;
+  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.5));
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ecfdf5;
+  letter-spacing: 0.05em;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: rgba(236, 253, 245, 0.5);
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+/* ==========================================================================
+   COLUNA CENTRAL - BOX DO CANARY
+   ========================================================================== */
+.canary-box {
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  background-color: rgba(14, 22, 18, 0.4);
+  padding: 16px;
+  border-radius: 2px;
+}
+
+.canary-box pre {
+  margin: 0;
+  padding: 0;
+}
+
+.canary-box code {
+  font-size: 12px;
+  color: #22c55e;
+  line-height: 1.5;
+  display: block;
+}
+
+/* ==========================================================================
+   COLUNA DA DIREITA - LINKS ONION
+   ========================================================================== */
+.mirrors-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mirrors-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mirror-address {
+  font-size: 13px;
+  color: rgba(236, 253, 245, 0.6);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.mirror-address:hover {
+  color: #22c55e;
+}
+
+.status-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.tag-primary {
+  color: #22c55e;
+  text-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+}
+
+/* ==========================================================================
+   BARRA DE COPYRIGHT INFERIOR
+   ========================================================================== */
+.footer-bottom-bar {
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: rgba(236, 253, 245, 0.3);
+  letter-spacing: 0.15em;
+  border-top: 1px solid rgba(34, 197, 94, 0.05);
+  padding-top: 24px;
+}
+
+/* Responsividade de Terminal Quebrado */
+@media (max-width: 992px) {
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-tagline {
+    max-width: 100%;
+  }
+}
